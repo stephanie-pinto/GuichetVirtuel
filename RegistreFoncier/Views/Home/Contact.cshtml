@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+}
+<!-- Carousel
+    ================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="http://placehold.it/900x500/777777&text=First+slide" alt="First slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Contactez-nous</h1>
+                    <p>
+                        Vous pouvez à tout moment nous contacter à l'aide de ce formulaire de contact. Veuillez sélectionner l'objet de la prise de contact dans la liste déroulante.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /.carousel -->
+<!-- Marketing messaging and featurettes
+    ================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+    <div style="text-align:center">
+        <h1>
+            Formulaire de contact
+        </h1>
+        <!-- CONTACT FORM https://github.com/jonmbake/bootstrap3-contact-form -->
+        <form role="form" id="feedbackForm" method="post" action="">
+
+            <div class="form-group">
+                <label for="nom"><?php echo $RS; ?></label>
+                <input type="text" class="form-control" id="nom" name="nom" required onKeyUp="up()" placeholder="nom de l'entreprise ou le nom et prénom" />
+            </div>
+            <div class="form-group">
+                <label for="email"><?php echo $email; ?></label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="p.ex: email@domaine.ch" required>
+            </div>
+            <div class="form-group">
+                <label for="adresse"><?php echo $adresse; ?></label>
+                <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Rue du Prazet 7, CH-1785 Cressier" required>
+            </div>
+            <div class="form-group">
+                <label for="telephone"><?php echo $tel; ?></label>
+                <input type="tel" class="form-control" id="telephone" name="telephone" placeholder="+41 26 674 35 04" required>
+            </div>
+            <div class="form-group">
+                <label for="objet"><?php echo $objet; ?></label>
+                    <div class="form-group">
+                        <select name="service">
+                            <option>Veuillez choisir l'objet</option>
+                            <option>Direction du service</option>
+                            <option>Acquisition par des personnes à l'étranger</option>
+                            <option>Registre foncier</option>
+                            <option>Introduction et informatisation du registre foncier</option>
+                            <option>Centrale des testaments</option>
+                            <option>Registre foncier 2020</option>
+                        </select>
+                        <div class="form-group"></div>
+                    <span class="focus-input100"></span>
+                </div>
+                <span class="help-block" style="display: none;">Entrez une adresse e-mail valide.</span>
+            </div>
+            <div class="form-group">
+                <label for="message"><?php echo $msg; ?></label>
+                <textarea rows="10" cols="100" class="form-control" id="message" name="message" placeholder="Message" required></textarea>
+            </div>
+            <span class="help-block" style="display: none;">Entrez le code de sécurité.</span>
+            <input type="submit" id="feedbackSubmit" value="Envoyer" name="envoi" class="btn btn-primary btn-lg" style=" margin-top: 10px;" />
+
+        </form>
+        <!-- END CONTACT FORM -->
+    </div>
+    </br>
+    </br>
+    <!-- FOOTER -->
+    <footer>
+        <p class="pull-right"><a href="#">Retour au sommet</a></p>
+        <p>&copy; 2018 Stéphanie Domingues Pinto</p>
+    </footer>
+
+</div><!-- /.container -->
