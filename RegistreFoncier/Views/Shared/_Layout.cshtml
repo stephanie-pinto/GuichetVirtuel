@@ -35,22 +35,40 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="~/Home/Index">Accueil</a></li>
-                            <li><a href="~/Home/Mission">Notre mission</a></li>
+                            <li class="active">
+                                @Html.ActionLink("Accueil", "Index", "Home")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Notre mission", "Mission", "Home")
+                            </li>
                             <li class="dropdown">
                                 <a href="~/Home/RF" class="dropdown-toggle" data-toggle="dropdown">Registre foncier<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="~/Home/Consultation">Consultation en ligne du registre foncier</a></li>
-                                    <li><a href="~/Home/ExtraitPublic">Extrait public du registre foncier</a></li>
-                                    <li><a href="~/Home/ExtraitComplet">Extrait complet du registre foncier</a></li>
-                                    <li><a href="~/Home/Charges">Déclaration des charges</a></li>
-                                    <li><a href="~/Home/Etrangers">Acquisition par des personnes à l'étranger</a></li>
+                                    <li>
+                                        @Html.ActionLink("Consultation en ligne du registre foncier", "Intercapi", "Consultation")
+                                    </li>
+                                    <li>@Html.ActionLink("Demande d'extrait du registre foncier", "Index", "Consultation")
+                                    </li>
+                                    <li>@Html.ActionLink("Extrait public du registre foncier", "Public", "Consultation")
+                                    </li>
+                                    <li>@Html.ActionLink("Extrait complet du registre foncier", "Index", "Consultation")
+                                    </li>
+                                    <li>@Html.ActionLink("Acquisition par des personnes à l'étranger", "Etranger", "Home")
+                                    </li>
                                 </ul>
                             </li>
-                            <li><a href="~/Home/Centrale">Centrale des testaments</a></li>
-                            <li><a href="~/Home/RF2020">Registre foncier 2020</a></li>
-                            <li><a href="~/Home/FAQ">FAQ</a></li>
-                            <li><a href="~/Home/Contact">Contact</a></li>
+                            <li>
+                                @Html.ActionLink("Centrale des testaments", "Centrale", "Home")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Registre foncier 2020", "RF2020", "Home")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Foire aux questions", "FAQ", "Home")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Contact", "Contact", "Home")
+                            </li>
                         </ul>
                     </div>
                 </div>

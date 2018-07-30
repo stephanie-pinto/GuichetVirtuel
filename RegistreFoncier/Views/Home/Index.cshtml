@@ -1,5 +1,9 @@
-﻿<!-- Carousel
-    ================================================== -->
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Carousel
+   ================================================== -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -9,22 +13,22 @@
     </ol>
     <div class="carousel-inner">
         <div class="item active">
-            <img src="http://placehold.it/900x500/777777&text=First+slide" alt="First slide">
+            <img src="/App_Data/img/val-de-mesdi.jpg">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Service du registre foncier</h1>
                     <p>Le Registre foncier est un service public chargé de donner l'état des droits en relation avec les immeubles (par ex. les servitudes et les gages immobiliers) ainsi que de sécuriser les droits liés à la propriété foncière.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">En apprendre plus</a></p>
+                    <p class="btn btn-lg btn-primary" role="button"><a>@Html.ActionLink("En savoir plus", "Mission", "Home")</a></p>
                 </div>
             </div>
         </div>
         <div class="item">
-            <img src="http://placehold.it/900x500/666666&text=Second+slide" alt="Second slide">
+            <img src="~/App_Data/img/bookshelf.jpg">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Consultation du registre foncier</h1>
                     <p>Le registre foncier donne l'état des droits sur les immeubles. Sont immatriculés comme immeubles au registre foncier : les biens-fonds, les droits distincts et permanents immatriculés au registre foncier, les mines et les parts de copropriété d'un immeuble.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Consulter</a></p>
+                    <p class="btn btn-lg btn-primary" role="button"><a>@Html.ActionLink("Consulter", "Index", "Consultation")</a></p>
                 </div>
             </div>
         </div>
@@ -34,7 +38,7 @@
                 <div class="carousel-caption">
                     <h1>Centrale valaisanne des testaments</h1>
                     <p>Les testaments sont annoncés à la centrale des testaments par le biais des notaires valaisans uniquement.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Plus de détails</a></p>
+                    <p class="btn btn-lg btn-primary" role="button"><a>@Html.ActionLink("Plus de détails", "Centrale", "Home")</a></p>
                 </div>
             </div>
         </div>
@@ -54,22 +58,21 @@
             <img class="img-circle" src="http://placehold.it/140x140" alt="Generic placeholder image">
             <h2>FAQ</h2>
             <p>Vous pourrez trouver les réponses aux questions les plus fréquemment posées.</p>
-            <p><a class="btn btn-default" href="#" role="button">Plus de détails &raquo;</a></p>
+            <p class="btn btn-lg btn-primary" role="button"><a>@Html.ActionLink("> Plus de détails", "FAQ", "Home")</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
             <img class="img-circle" src="http://placehold.it/140x140" alt="Generic placeholder image">
             <h2>Registre Foncier 2020</h2>
             <p>Le projet RF2020 a pour but de moderniser le registre foncier, d'introduire le Registre foncier fédéral informatisé et de mettre en place un système d'information sur les immeubles.</p>
-            <p><a class="btn btn-default" href="#" role="button">Plus de détails &raquo;</a></p>
+            <p class="btn btn-lg btn-primary" role="button"><a>@Html.ActionLink("> Plus de détails", "RF2020", "Home")</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
             <img class="img-circle" src="http://placehold.it/140x140" alt="Generic placeholder image">
             <h2>Bureaux du registre foncier</h2>
             <p>Nous avons six bureaux du registre foncier à Loèche, à Brigue, à Sierre, à Sion, à Martigny et à Monthey.</p>
-            <p><a class="btn btn-default" href="#" role="button">Plus de détails &raquo;</a></p>
+            <p class="btn btn-lg btn-primary" role="button"><a>@Html.ActionLink("> Plus de détails", "RF", "Home")</a></p>
         </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
-    
     <!-- FOOTER -->
     <footer>
         <p class="pull-right"><a href="#">Retour au sommet</a></p>

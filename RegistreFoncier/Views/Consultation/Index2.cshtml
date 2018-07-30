@@ -1,0 +1,60 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Carousel
+    ================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="http://placehold.it/900x500/777777&text=First+slide" alt="First slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Consultation</h1>
+                    <h2>
+                        Pour consulter le contenu du registre foncier, vous avez différentes options.
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /.carousel -->
+<!-- Marketing messaging and featurettes
+    ================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+    <div style="text-align:center">
+        <!-- CONTACT FORM https://github.com/jonmbake/bootstrap3-contact-form -->
+        <form role="form" id="feedbackForm" method="post" action="">
+            <div class="form-group">
+                <h4><a>@Html.ActionLink("Demande d'extrait public", "Public", "Consultation")</a></h4>
+            </div>
+            <div class="form-group">
+                <h4><a>@Html.ActionLink("Demande d'extrait complet", "Complet", "Consultation") </a></h4>
+</div>
+            <div class="form-group">
+                <h4><a>@Html.ActionLink("Consultation au guichet physique des registres foncier", "Contact", "Home") </a></h4>
+</div>
+            <div class="form-group">
+                <h4><a>@Html.ActionLink("Accès en ligne étendu (abonnement)", "Intercapi", "Consultation")</a></h4>
+            </div>
+        </form>
+        <!-- END CONTACT FORM -->
+    </div>
+    </br>
+    </br>
+    <!-- FOOTER -->
+    <footer>
+        <p class="pull-right"><a href="#">Retour au sommet</a></p>
+        <p>&copy; 2018 Stéphanie Domingues Pinto</p>
+    </footer>
+
+</div><!-- /.container -->

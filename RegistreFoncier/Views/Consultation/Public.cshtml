@@ -1,0 +1,96 @@
+﻿@model RegistreFoncier.ViewModels.PublicViewModels
+{
+    @ViewBag.Title = "Contact";
+}
+<!-- Carousel
+    ================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="http://placehold.it/900x500/777777&text=First+slide" alt="First slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Demande d'extrait public du registre foncier</h1>
+                    <h2>
+                        Afin de faire la demande d'extrait public du registre foncier, veuillez remplir le formulaire suivant.   
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /.carousel -->
+<!-- Marketing messaging and featurettes
+    ================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+
+    @using (Html.BeginForm("HandleFormPublic", "Consultation"))
+    {
+        <!-- Formulaire pour la demande -->
+
+        @Html.AntiForgeryToken()
+        <!--Sécurité pour le formulaire-->
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Firstname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Firstname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Commune, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Commune", (SelectList)ViewData["Communes"])
+                @Html.ValidationMessageFor(model => model.Commune, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Parcelle, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Parcelle, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Parcelle, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+    </div>
+            }
+
+
+            <!-- FOOTER -->
+            <footer>
+                <p class="pull-right"><a href="#">Retour au sommet</a></p>
+                <p>&copy; 2018 Stéphanie Domingues Pinto</p>
+            </footer>
+
+</div><!-- /.container -->

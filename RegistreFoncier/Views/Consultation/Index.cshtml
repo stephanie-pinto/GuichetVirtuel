@@ -1,0 +1,72 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Consultation";
+}
+
+<!-- Carousel
+    ================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="http://placehold.it/900x500/777777&text=First+slide" alt="First slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Consultation</h1>
+                    <h2>
+                        Etes vous propriétaire ou en possession d'une procuration ?
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /.carousel -->
+<!-- Marketing messaging and featurettes
+    ================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+    <div style="text-align:center">
+        <!-- CONTACT FORM https://github.com/jonmbake/bootstrap3-contact-form -->
+        <form role="form" id="feedbackForm" method="post" action="">
+            <p>Si vous faites parti des cas suivants, suivez le lien ci-dessous :
+                <ul style="list-style-position: inside">
+                    <li>Vous êtes le propriétaire,
+                    <li />
+                    <li>Vous êtes en possession d''une procuration,
+                    <li />
+                    <li>Vous êtes en possession d''un mandat,
+                    <li />
+                    <li>Vous êtes le curateur du propriétaire,
+                    <li />
+                    <li>Vous êtes héritier du propriétaire,
+                    <li />
+                    <li>Vous êtes en possession de tout autre document qui explique l'intérêt.
+                    <li />
+                </ul>
+            </p>
+            <div class="form-group">
+                <h3><a>@Html.ActionLink("> Propriétaire ou en possession d'une procuration", "Index2", "Consultation")</a></h3>
+            </div>
+            <p>Si vous ne faites parti d'aucun des cas décrits ci-dessus, vous pouvez uniquement obtenir un extrait public du registre foncier. Suivez le lien suivant.</p>
+            <div class="form-group">
+                <h3><a>@Html.ActionLink("> Demande d'un extrait public", "Public", "Consultation")</a></h3>
+            </div>
+        </form>
+        <!-- END CONTACT FORM -->
+    </div>
+    </br>
+    </br>
+    <!-- FOOTER -->
+    <footer>
+        <p class="pull-right"><a href="#">Retour au sommet</a></p>
+        <p>&copy; 2018 Stéphanie Domingues Pinto</p>
+    </footer>
+
+</div><!-- /.container -->
