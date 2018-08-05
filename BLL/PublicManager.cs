@@ -10,9 +10,9 @@ namespace BLL
 {
     public class PublicManager
     {
-        public static ExtraitPublic GetExtraitPublic()
+        public static ExtraitPublic GetExtraitPublic(int IdPublic, String Name, String Firstname, String Email, String Commune, String Parcelle)
         {
-            return ExtraitPublicDB.GetExtraitPublic();
+            return ExtraitPublicDB.GetExtraitPublic(IdPublic, Name, Firstname, Email, Commune, Parcelle);
         } 
 
     }

@@ -17,9 +17,9 @@
             <img src="http://placehold.it/900x500/777777&text=First+slide" alt="First slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Consultation</h1>
+                    <h1>@RegistreFoncier.Resources.Consultation.Index.Titre1</h1>
                     <h2>
-                        Etes vous propriétaire ou en possession d'une procuration ?
+                        @RegistreFoncier.Resources.Consultation.Index.Titre2
                     </h2>
                 </div>
             </div>
@@ -35,37 +35,29 @@
     <div style="text-align:center">
         <!-- CONTACT FORM https://github.com/jonmbake/bootstrap3-contact-form -->
         <form role="form" id="feedbackForm" method="post" action="">
-            <p>Si vous faites parti des cas suivants, suivez le lien ci-dessous :
+            <p>@RegistreFoncier.Resources.Consultation.Index.Option1
                 <ul style="list-style-position: inside">
-                    <li>Vous êtes le propriétaire,
-                    <li />
-                    <li>Vous êtes en possession d''une procuration,
-                    <li />
-                    <li>Vous êtes en possession d''un mandat,
-                    <li />
-                    <li>Vous êtes le curateur du propriétaire,
-                    <li />
-                    <li>Vous êtes héritier du propriétaire,
-                    <li />
-                    <li>Vous êtes en possession de tout autre document qui explique l'intérêt.
-                    <li />
+                    <li>@RegistreFoncier.Resources.Consultation.Index.Proprietaire<li />
+                    <li>@RegistreFoncier.Resources.Consultation.Index.Procuration<li />
+                    <li>@RegistreFoncier.Resources.Consultation.Index.Mandat<li />
+                    <li>@RegistreFoncier.Resources.Consultation.Index.Curateur<li />
+                    <li>@RegistreFoncier.Resources.Consultation.Index.Heritier<li />
+                    <li>@RegistreFoncier.Resources.Consultation.Index.Autre<li />
                 </ul>
             </p>
             <div class="form-group">
                 <h3><a>@Html.ActionLink("> Propriétaire ou en possession d'une procuration", "Index2", "Consultation")</a></h3>
             </div>
-            <p>Si vous ne faites parti d'aucun des cas décrits ci-dessus, vous pouvez uniquement obtenir un extrait public du registre foncier. Suivez le lien suivant.</p>
+            <p>@RegistreFoncier.Resources.Consultation.Index.Option2</p>
             <div class="form-group">
                 <h3><a>@Html.ActionLink("> Demande d'un extrait public", "Public", "Consultation")</a></h3>
             </div>
         </form>
         <!-- END CONTACT FORM -->
     </div>
-    </br>
-    </br>
     <!-- FOOTER -->
     <footer>
-        <p class="pull-right"><a href="#">Retour au sommet</a></p>
+        <p class="pull-right"><a href="#"@RegistreFoncier.Resources.Consultation.Index.Retour</a></p>
         <p>&copy; 2018 Stéphanie Domingues Pinto</p>
     </footer>
 

@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Consultation";
+}
+
+<!-- Carousel
+    ================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="http://placehold.it/900x500/777777&text=First+slide" alt="First slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>@RegistreFoncier.Resources.Consultation.Done.Titre</h1>
+                    <h2>
+                        @RegistreFoncier.Resources.Consultation.Done.Texte
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /.carousel -->
+
+<div class="container marketing">
+    <!-- FOOTER -->
+    <footer>
+        <p class="pull-right"><a href="#">@RegistreFoncier.Resources.Consultation.Done.Retour</a></p>
+        <p>&copy; 2018 Stéphanie Domingues Pinto</p>
+    </footer>
+
+</div><!-- /.container -->

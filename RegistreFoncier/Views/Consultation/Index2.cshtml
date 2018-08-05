@@ -16,9 +16,9 @@
             <img src="http://placehold.it/900x500/777777&text=First+slide" alt="First slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Consultation</h1>
+                    <h1>@RegistreFoncier.Resources.Consultation.Index2.Titre1</h1>
                     <h2>
-                        Pour consulter le contenu du registre foncier, vous avez différentes options.
+                        @RegistreFoncier.Resources.Consultation.Index2.Titre2
                     </h2>
                 </div>
             </div>
@@ -35,16 +35,16 @@
         <!-- CONTACT FORM https://github.com/jonmbake/bootstrap3-contact-form -->
         <form role="form" id="feedbackForm" method="post" action="">
             <div class="form-group">
-                <h4><a>@Html.ActionLink("Demande d'extrait public", "Public", "Consultation")</a></h4>
+                <h4><a>@Html.ActionLink(@RegistreFoncier.Resources.Consultation.Index2.Public, "Public", "Consultation")</a></h4>
             </div>
             <div class="form-group">
-                <h4><a>@Html.ActionLink("Demande d'extrait complet", "Complet", "Consultation") </a></h4>
+                <h4><a>@Html.ActionLink(@RegistreFoncier.Resources.Consultation.Index2.Complet, "Complet", "Consultation") </a></h4>
 </div>
             <div class="form-group">
-                <h4><a>@Html.ActionLink("Consultation au guichet physique des registres foncier", "Contact", "Home") </a></h4>
+                <h4><a>@Html.ActionLink(@RegistreFoncier.Resources.Consultation.Index2.Guichet, "Contact", "Home") </a></h4>
 </div>
             <div class="form-group">
-                <h4><a>@Html.ActionLink("Accès en ligne étendu (abonnement)", "Intercapi", "Consultation")</a></h4>
+                <h4><a>@Html.ActionLink(@RegistreFoncier.Resources.Consultation.Index2.Abonnement, "Intercapi", "Consultation")</a></h4>
             </div>
         </form>
         <!-- END CONTACT FORM -->
@@ -53,7 +53,7 @@
     </br>
     <!-- FOOTER -->
     <footer>
-        <p class="pull-right"><a href="#">Retour au sommet</a></p>
+        <p class="pull-right"><a href="#">@RegistreFoncier.Resources.Consultation.Index2.Retour</a></p>
         <p>&copy; 2018 Stéphanie Domingues Pinto</p>
     </footer>
 

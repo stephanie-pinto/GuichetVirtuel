@@ -1,7 +1,9 @@
-﻿@model RegistreFoncier.ViewModels.PublicViewModels
-{
-    @ViewBag.Title = "Contact";
+﻿@model RegistreFoncier.ViewModels.CompletViewModels
+
+@{
+    ViewBag.Title = "Complet";
 }
+
 <!-- Carousel
     ================================================== -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -16,9 +18,9 @@
             <img src="http://placehold.it/900x500/777777&text=First+slide" alt="First slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>@RegistreFoncier.Resources.Consultation.Public.Titre1</h1>
+                    <h1>@RegistreFoncier.Resources.Consultation.Complet.Titre1</h1>
                     <h2>
-                        @RegistreFoncier.Resources.Consultation.Public.Titre2
+                        @RegistreFoncier.Resources.Consultation.Complet.Titre2
                     </h2>
                 </div>
             </div>
@@ -43,6 +45,7 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
+        <h5>@RegistreFoncier.Resources.Consultation.Complet.Donnees</h5>
         <div class="form-group">
             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -60,10 +63,26 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.Adress, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Adress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Adress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tel, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Tel, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Tel, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -82,21 +101,57 @@
             </div>
         </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.Proprietaire, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(model => model.Proprietaire)
+                @Html.ValidationMessageFor(model => model.Proprietaire, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NameProprietaire, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NameProprietaire, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstnameProprietaire, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FirstnameProprietaire, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Annexe, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Annexe, new { type = "file" });
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Remarque, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Remarque, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Remarque, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
         <!--Enregistrement de la demande-->
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value=@RegistreFoncier.Resources.Consultation.Public.Envoyer class="btn btn-lg btn-primary"/>
+                <input type="submit" value=@RegistreFoncier.Resources.Consultation.Complet.Envoyer class="btn btn-lg btn-primary" />
             </div>
         </div>
-        @ViewBag.Message
-    </div>
-            }
+   </div>
+    }
 
 
-            <!-- FOOTER -->
-            <footer>
-                <p class="pull-right"><a href="#">@RegistreFoncier.Resources.Consultation.Public.Retour</a></p>
-                <p>&copy; 2018 Stéphanie Domingues Pinto</p>
-            </footer>
+    <!-- FOOTER -->
+    <footer>
+        <p class="pull-right"><a href="#">@RegistreFoncier.Resources.Consultation.Complet.Retour</a></p>
+        <p>&copy; 2018 Stéphanie Domingues Pinto</p>
+    </footer>
 
-</div><!-- /.container -->
+    </div><!-- /.container -->

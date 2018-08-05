@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace RegistreFoncier.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : MyController
     {
         public ActionResult Index()
         {
@@ -48,6 +48,12 @@ namespace RegistreFoncier.Controllers
         {
             ViewBag.Title = "Foire aux questions";
             return View();
+        }
+
+        public ActionResult ChangeLanguage(string lang)
+        {
+            new LanguageMang().SetLanguage(lang);
+            return Redirect(Request.UrlReferrer.PathAndQuery);
         }
     }
 }

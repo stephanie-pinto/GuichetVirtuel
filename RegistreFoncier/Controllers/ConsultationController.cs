@@ -1,13 +1,18 @@
 ﻿using RegistreFoncier.ViewModels;
+using RegistreFoncier;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BLL;
+using System.IO;
+using System.Net;
+using Microsoft.Owin.Logging;
 
 namespace RegistreFoncier.Controllers
 {
-    public class ConsultationController : Controller
+    public class ConsultationController : MyController
     {
         // GET: Consultation
         public ActionResult Index()
@@ -29,111 +34,282 @@ namespace RegistreFoncier.Controllers
         public ActionResult Complet()
         {
             ViewBag.Title = "Extrait complet du registre foncier";
-            return View();
+
+            // Let's get all states that we need for a DropDownList
+            var communes2 = GetAllStates();
+
+            var model2 = new CompletViewModels();
+
+            // Create a list of SelectListItems so these can be rendered on the page
+            model2.Communes = GetSelectListItems(communes2);
+
+            return View(model2);
         }
 
         public ActionResult Public()
         {
             ViewBag.Title = "Extrait public du registre foncier";
 
-            List<string> communesList = new List<string>();
-            communesList.Add("Dog");
-            communesList.Add("Cat");
-            communesList.Add("Hamster");
-            communesList.Add("Parrot");
-            communesList.Add("Gold fish");
-            communesList.Add("Mountain lion");
-            communesList.Add("Elephant");
+            // Let's get all states that we need for a DropDownList
+            var communes = GetAllStates();
 
-            ViewData["Communes"] = new SelectList(communesList);
+            var model = new PublicViewModels();
 
-            return View();
+            // Create a list of SelectListItems so these can be rendered on the page
+            model.Communes = GetSelectListItems(communes);
+
+            return View(model);
         }
+        
 
+        //
+        // 1. Action method for displaying 'Sign Up' page
+        //
         [HttpPost]
-        public ActionResult HandleFormPublic(PublicViewModels publicViewModels)
+        public ActionResult Public(PublicViewModels model)
         {
+            // Get all states again
+            var communes = GetAllStates();
+
+            // Set these states on the model. We need to do this because
+            // only the selected value from the DropDownList is posted back, not the whole
+            // list of states.
+            model.Communes = GetSelectListItems(communes);
+
+            Random rnd = new Random();
+            model.IdPublic = rnd.Next(1, 9999);
+
             if (ModelState.IsValid)
             {
-                //MemberManager.AddMember(registerVM.Firstname, registerVM.Lastname, registerVM.Gender, registerVM.Email, registerVM.Password);
-                return RedirectToAction("Login");
+
+                Session["PublicViewModels"] = model;
+                PublicManager.GetExtraitPublic(model.IdPublic, model.Name, model.Firstname, model.Email, model.Commune, model.Parcelle);
+                Logs.Logs.LogExtraitPublic(model.IdPublic + " - " + model.Name + " " + model.Firstname + ", Commune de " + model.Commune + " Parcelle n° " + model.Parcelle, model.Email);
+                ViewBag.Success = true;
+                ViewBag.Message = "La demande a été transmise !";
+                return RedirectToAction("Done");
             }
-
-            return View();
+            else
+            {
+                ViewBag.Message = "Erreur dans la transmission de la demande !";
+                return View("Public", model);
+            }
+            
         }
 
 
-
-        // GET: Consultation/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: Consultation/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Consultation/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Complet(CompletViewModels model)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            // Get all states again
+            var communes = GetAllStates();
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            // Set these states on the model. We need to do this because
+            // only the selected value from the DropDownList is posted back, not the whole
+            // list of states.
+            model.Communes = GetSelectListItems(communes);
+
+            Random rnd = new Random();
+            model.IdComplet = rnd.Next(1, 9999);
+
+            //if (model.Annexe != null)
+                //{
+                   /** string fileName = Path.GetFileName(model.Annexe.FileName);
+                    string path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                    model.Annexe.SaveAs(path);**/
+                    if (ModelState.IsValid)
+                    {
+                        Session["CompletViewModels"] = model;
+                        CompletManager.GetExtraitComplet(model.IdComplet, model.Name, model.Firstname, model.Adress, model.Email, model.Tel, model.Commune, model.Parcelle, model.Proprietaire, model.NameProprietaire, model.FirstnameProprietaire, model.Annexe, model.Remarque);
+                        ViewBag.Success = true;
+                        ViewBag.Message = "La commande a été transmise !";
+                        return RedirectToAction("Done");
+                    }
+                else
+                {
+                    ViewBag.Message = "La transmission de la demande a échouée";
+                    return View("Complet", model);
+                }
+                /**}
+                else { 
+            
+                    ViewBag.Message = "La transmission de la demande a échouée";
+                    return View("Complet", model);
+                }**/
         }
 
-        // GET: Consultation/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Done()
         {
+            ViewBag.Title = "Success";
+
             return View();
         }
 
-        // POST: Consultation/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        // Just return a list of states - in a real-world application this would call
+        // into data access layer to retrieve states from a database.
+        private IEnumerable<string> GetAllStates()
         {
-            try
+            return new List<string>
             {
-                // TODO: Add update logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+                "Agarn",
+                "Albinen",
+                "Anniviers",
+                "Arbaz",
+                "Ardon",
+                "Ausserberg",
+                "Ayent",
+                "Bagnes",
+                "Baltschieder",
+                "Bellwald",
+                "Bettmeralp",
+                "Binn",
+                "Bister",
+                "Bitsch",
+                "Blatten",
+                "Bourg-Saint-Pierre",
+                "Bovernier",
+                "Brig-Glis",
+                "Bürchen",
+                "Chalais",
+                "Chamoson",
+                "Champéry",
+                "Charrat",
+                "Chippis",
+                "Collombey-Muraz",
+                "Collonges",
+                "Conthey",
+                "Crans-Montana",
+                "Dorénaz",
+                "Eggerberg",
+                "Eischoll",
+                "Eisten",
+                "Embd",
+                "Ergisch",
+                "Ernen",
+                "Evolène",
+                "Ferden",
+                "Fiesch",
+                "Fieschertal",
+                "Finhaut",
+                "Fully",
+                "Gampel-Bratsch",
+                "Goms",
+                "Grengiols",
+                "Grimisuat",
+                "Grône",
+                "Grächen",
+                "Guttet-Feschel",
+                "Hérémence",
+                "Icogne",
+                "Inden",
+                "Isérables",
+                "Kippel",
+                "Lalden",
+                "Lax",
+                "Lens",
+                "Lextron",
+                "Liddes",
+                "Leuk",
+                "Leukerbad",
+                "Martigny",
+                "Martigny-Combe",
+                "Massongex",
+                "Miège",
+                "Mont-Noble",
+                "Monthey",
+                "Mörel-Filet",
+                "Naters",
+                "Nendaz",
+                "Niedergesteln",
+                "Oberems",
+                "Obergoms",
+                "Orsières",
+                "Port-Valais",
+                "Randa",
+                "Rarogne",
+                "Riddes",
+                "Ried-Brig",
+                "Riederalp",
+                "Saas-Almagell",
+                "Saas-Balen",
+                "Saas-Fee",
+                "Saas-Grund",
+                "Saillon",
+                "Saint-Gingolph",
+                "Saint-Léonard",
+                "Saint-Martin",
+                "Saint-Maurice",
+                "Saint-Nicolas",
+                "Salquenen",
+                "Salvan",
+                "Savièse",
+                "Saxon",
+                "Sembrancher",
+                "Sierre",
+                "Simplon",
+                "Sion",
+                "Stalden",
+                "Staldenried",
+                "Steg-Hohtenn",
+                "Termen",
+                "Trient",
+                "Troistorrents",
+                "Turtmann-Unterems",
+                "Täsch",
+                "Törbel",
+                "Unterbäch",
+                "Val-d'Illiez",
+                "Varonne",
+                "Venthône",
+                "Vernayaz",
+                "Vérossaz",
+                "Vétroz",
+                "Vex",
+                "Veyras",
+                "Veysonnaz",
+                "Viège",
+                "Vionnaz",
+                "Visperterminen",
+                "Vollèges",
+                "Vouvry",
+                "Wiler",
+                "Zeneggen",
+                "Zermatt",
+                "Zwischbergen",
+        };
         }
 
-        // GET: Consultation/Delete/5
-        public ActionResult Delete(int id)
+        // This is one of the most important parts in the whole example.
+        // This function takes a list of strings and returns a list of SelectListItem objects.
+        // These objects are going to be used later in the SignUp.html template to render the
+        // DropDownList.
+        private IEnumerable<SelectListItem> GetSelectListItems(IEnumerable<string> elements)
         {
-            return View();
+            // Create an empty list to hold result of the operation
+            var selectList = new List<SelectListItem>();
+
+            // For each string in the 'elements' variable, create a new SelectListItem object
+            // that has both its Value and Text properties set to a particular value.
+            // This will result in MVC rendering each item as:
+            //     <option value="State Name">State Name</option>
+            foreach (var element in elements)
+            {
+                selectList.Add(new SelectListItem
+                {
+                    Value = element,
+                    Text = element
+                });
+            }
+
+            return selectList;
         }
 
-        // POST: Consultation/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult ChangeLanguage(string lang)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            new LanguageMang().SetLanguage(lang);
+            return Redirect(Request.UrlReferrer.PathAndQuery);
         }
+
     }
 }

@@ -31,43 +31,47 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#"><img src="~/Src/valais.png" alt="Canton du Valais" class="valais"/></a>
+                        <a class="navbar-brand" href="#"><img src="~/Src/valais.png" alt="Canton du Valais" class="valais" /></a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li class="active">
-                                @Html.ActionLink("Accueil", "Index", "Home")
+                                @Html.ActionLink(@RegistreFoncier.Resources.Shared._Layout.Accueil, "Index", "Home")
                             </li>
                             <li>
-                                @Html.ActionLink("Notre mission", "Mission", "Home")
+                                @Html.ActionLink(@RegistreFoncier.Resources.Shared._Layout.Mission, "Mission", "Home")
                             </li>
                             <li class="dropdown">
-                                <a href="~/Home/RF" class="dropdown-toggle" data-toggle="dropdown">Registre foncier<b class="caret"></b></a>
+                                <a href="~/Consultation/Index" class="dropdown-toggle" data-toggle="dropdown">@RegistreFoncier.Resources.Shared._Layout.RF<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        @Html.ActionLink("Consultation en ligne du registre foncier", "Intercapi", "Consultation")
+                                        @Html.ActionLink(@RegistreFoncier.Resources.Shared._Layout.ConsultationEnLigne, "Intercapi", "Consultation")
                                     </li>
-                                    <li>@Html.ActionLink("Demande d'extrait du registre foncier", "Index", "Consultation")
+                                    <li>
+                                        @Html.ActionLink(@RegistreFoncier.Resources.Shared._Layout.Demande, "Index", "Consultation")
                                     </li>
-                                    <li>@Html.ActionLink("Extrait public du registre foncier", "Public", "Consultation")
+                                    <li>
+                                        @Html.ActionLink(@RegistreFoncier.Resources.Shared._Layout.Public, "Public", "Consultation")
                                     </li>
-                                    <li>@Html.ActionLink("Extrait complet du registre foncier", "Index", "Consultation")
+                                    <li>
+                                        @Html.ActionLink(@RegistreFoncier.Resources.Shared._Layout.Complet, "Complet", "Consultation")
                                     </li>
-                                    <li>@Html.ActionLink("Acquisition par des personnes à l'étranger", "Etranger", "Home")
+                                    <li>
+                                        @Html.ActionLink(@RegistreFoncier.Resources.Shared._Layout.Etranger, "Etranger", "Home")
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                @Html.ActionLink("Centrale des testaments", "Centrale", "Home")
+                                @Html.ActionLink(@RegistreFoncier.Resources.Shared._Layout.Centrale, "Centrale", "Home")
                             </li>
                             <li>
-                                @Html.ActionLink("Registre foncier 2020", "RF2020", "Home")
+                                @Html.ActionLink(@RegistreFoncier.Resources.Shared._Layout.RF2020, "RF2020", "Home")
                             </li>
                             <li>
-                                @Html.ActionLink("Foire aux questions", "FAQ", "Home")
+                                @Html.ActionLink(@RegistreFoncier.Resources.Shared._Layout.FAQ, "FAQ", "Home")
                             </li>
                             <li>
-                                @Html.ActionLink("Contact", "Contact", "Home")
+                                @Html.ActionLink(@RegistreFoncier.Resources.Shared._Layout.Contact, "Contact", "Home")
                             </li>
                         </ul>
                     </div>
@@ -76,10 +80,19 @@
 
         </div>
     </div>
-
+    <div style="padding:5px">
+        @{
+            foreach (var i in RegistreFoncier.LanguageMang.AvailableLanguages)
+            {
+                @Html.ActionLink(i.LanguageFullName, "ChangeLanguage", "Consultation", new { lang = i.LanguageCultureName }, null) <text> </text>
+            }
+        }
+    </div>
     @RenderBody()
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="@Url.Content("~/js/bootstrap.js")"></script>
 </body>
 </html>
+
