@@ -15,9 +15,9 @@
     </ol>
     <div class="carousel-inner">
         <div class="item active">
-            <img src="http://placehold.it/900x500/777777&text=First+slide" alt="First slide">
+            <img src="~/Src/bookshelf.jpg" alt="Complet"/>
             <div class="container">
-                <div class="carousel-caption">
+                <div class="carousel-caption"  style="text-shadow:2px 2px 2px black">
                     <h1>@RegistreFoncier.Resources.Consultation.Complet.Titre1</h1>
                     <h2>
                         @RegistreFoncier.Resources.Consultation.Complet.Titre2
@@ -144,7 +144,16 @@
                 <input type="submit" value=@RegistreFoncier.Resources.Consultation.Complet.Envoyer class="btn btn-lg btn-primary" />
             </div>
         </div>
-   </div>
+
+        <p> </p>
+        <div>
+            <p class="alert-warning" style="font-size:medium">
+                @RegistreFoncier.Resources.Consultation.Complet.Disclaimer1
+            </p>
+            <p class="alert-warning" style="font-size:medium">@RegistreFoncier.Resources.Consultation.Complet.Disclaimer2</p>
+        </div>
+
+    </div>
     }
 
 

@@ -82,6 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompletManager.cs" />
+    <Compile Include="ContactManager.cs" />
+    <Compile Include="IntercapiManager.cs" />
     <Compile Include="PublicManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

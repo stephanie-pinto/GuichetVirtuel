@@ -123,6 +123,15 @@
   <data name="Curateur" xml:space="preserve">
     <value>Vous êtes le curateur du propriétaire,</value>
   </data>
+  <data name="Disclaimer1" xml:space="preserve">
+    <value>A l'exception de certaines informations qui sont publiques pour un immeuble déterminé, les données du registre foncier ne sont accessibles que moyennant la justification d'un intérêt.</value>
+  </data>
+  <data name="Disclaimer2" xml:space="preserve">
+    <value>Les demandes en ligne d'extrait public du registre foncier sont gratuites, les autres prestations donnent lieu à la perception d'un émolument.</value>
+  </data>
+  <data name="Guichet" xml:space="preserve">
+    <value>Vous avez également la possibilité de faire vos demandes directement au guichet physique des registres fonciers. Attention, s'il s'agit d'une demande d'extrait complet du registre foncier, vous devez apporter avec vous une pièce d'identité et tout document qui justifie votre intérêt. </value>
+  </data>
   <data name="Heritier" xml:space="preserve">
     <value>Vous êtes héritier du propriétaire,</value>
   </data>

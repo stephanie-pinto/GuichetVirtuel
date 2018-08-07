@@ -121,10 +121,16 @@
     <value>Adresse, Localité : </value>
   </data>
   <data name="Annexe" xml:space="preserve">
-    <value>Dcouments annexés (procuration , certificat d'héritage, etc.) :</value>
+    <value>Annexer tous documents utiles à la justification de votre intérêt (procuration , certificat d'héritage, etc.) :</value>
   </data>
   <data name="Commune" xml:space="preserve">
     <value>Commune :</value>
+  </data>
+  <data name="Disclaimer1" xml:space="preserve">
+    <value>Conformément à l'article 970 alinéa 1 du Code civil, vous devez justifier d'un intérêt pour obtenir un extrait certifié ou une attestation concernant d'autres données que celles librement accessibles.</value>
+  </data>
+  <data name="Disclaimer2" xml:space="preserve">
+    <value>La commande est livrée et facturée à l'adresse indiquée dans le formulaire.</value>
   </data>
   <data name="Donnees" xml:space="preserve">
     <value>Ces données concernent le demandeur :</value>

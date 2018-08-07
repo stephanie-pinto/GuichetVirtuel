@@ -120,6 +120,12 @@
   <data name="Commune" xml:space="preserve">
     <value>Gemeinde :</value>
   </data>
+  <data name="Disclaimer1" xml:space="preserve">
+    <value>Gemäß Artikel 970 Absatz 2 des Zivilgesetzbuch und 26 der Grundbuchverordnung (GBV) können Sie einen Auszug aus dem Grundbuch bestimmter Daten des Grundbuchs eines bestimmten Gebäudes erhalten, ohne dass Sie ein Interesse rechtfertigen müssen.</value>
+  </data>
+  <data name="Disclaimer2" xml:space="preserve">
+    <value>Das System ist vor einer fortlaufenden Konsultation geschützt, wobei eine Konsultation die Begründung eines Interesses erfordert.</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>E-Mail : </value>
   </data>

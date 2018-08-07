@@ -4480,6 +4480,7 @@ a.thumbnail.active {
   background-color: #fcf8e3;
   border-color: #fbeed5;
   color: #c09853;
+  font-size: medium;
 }
 .alert-warning hr {
   border-top-color: #f8e5be;

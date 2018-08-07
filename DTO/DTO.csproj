@@ -100,6 +100,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExtraitComplet.cs" />
+    <Compile Include="Contact.cs" />
+    <Compile Include="DemandeIntercapi.cs" />
     <Compile Include="ExtraitPublic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

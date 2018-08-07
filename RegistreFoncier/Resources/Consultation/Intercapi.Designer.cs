@@ -70,6 +70,15 @@ namespace RegistreFoncier.Resources.Consultation {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Faire une demande Intercapi.
+        /// </summary>
+        public static string DemandeIntercapi {
+            get {
+                return ResourceManager.GetString("DemandeIntercapi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Mot de passe oublié ?.
         /// </summary>
         public static string MDP {

@@ -126,6 +126,12 @@
   <data name="Commune" xml:space="preserve">
     <value>Gemeinde :</value>
   </data>
+  <data name="Disclaimer1" xml:space="preserve">
+    <value>Gemäß Artikel 970 Absatz 1 des Zivilgesetzbuch müssen Sie ein Interesse daran haben, einen beglaubigten Auszug oder eine Bescheinigung über andere als die frei verfügbaren Daten zu erhalten.</value>
+  </data>
+  <data name="Disclaimer2" xml:space="preserve">
+    <value>Die Bestellung wird an die im Formular angegebene Adresse geliefert und in Rechnung gestellt.</value>
+  </data>
   <data name="Donnees" xml:space="preserve">
     <value>Diese Daten beziehen sich auf den Antragsteller :</value>
   </data>

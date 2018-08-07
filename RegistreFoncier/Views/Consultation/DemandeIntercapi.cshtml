@@ -1,0 +1,114 @@
+﻿@model RegistreFoncier.ViewModels.IntercapiViewModels
+
+<!-- Carousel
+    ================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="~/Src/computer-capi.png" alt="Serge" />
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>@RegistreFoncier.Resources.Consultation.DemandeIntercapi.Titre1</h1>
+                    <h2>
+                        @RegistreFoncier.Resources.Consultation.DemandeIntercapi.Titre2
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /.carousel -->
+<!-- Marketing messaging and featurettes
+    ================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+    @Html.Raw(TempData["msg"])
+
+    @using (Html.BeginForm())
+    {
+        <!-- Formulaire pour la demande -->
+
+        @Html.AntiForgeryToken()
+        <!--Sécurité pour le formulaire-->
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Firstname, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Firstname, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.Type, Model.Types, "- Veuillez sélectionner un type de demande -", new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Group, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.Group, Model.Groups, "- Veuillez sélectionner un groupe d'utilisateurs -", new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style="height:100px">
+                    @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <!--Enregistrement de la demande-->
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value=@RegistreFoncier.Resources.Consultation.DemandeIntercapi.Envoyer class="btn btn-lg btn-primary" />
+                </div>
+            </div>
+            <p> </p>
+            <div>
+            </div>
+            @ViewBag.Message
+
+        </div>
+
+    }
+
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="pull-right"><a href="#">@RegistreFoncier.Resources.Consultation.DemandeIntercapi.Retour</a></p>
+        <p>&copy; 2018 Stéphanie Domingues Pinto</p>
+    </footer>
+
+</div><!-- /.container -->

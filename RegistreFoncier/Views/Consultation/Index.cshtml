@@ -14,7 +14,7 @@
     </ol>
     <div class="carousel-inner">
         <div class="item active">
-            <img src="http://placehold.it/900x500/777777&text=First+slide" alt="First slide">
+            <img src="~/Src/hiking.jpg" alt="Serge" />
             <div class="container">
                 <div class="carousel-caption">
                     <h1>@RegistreFoncier.Resources.Consultation.Index.Titre1</h1>
@@ -35,23 +35,37 @@
     <div style="text-align:center">
         <!-- CONTACT FORM https://github.com/jonmbake/bootstrap3-contact-form -->
         <form role="form" id="feedbackForm" method="post" action="">
-            <p>@RegistreFoncier.Resources.Consultation.Index.Option1
-                <ul style="list-style-position: inside">
-                    <li>@RegistreFoncier.Resources.Consultation.Index.Proprietaire<li />
-                    <li>@RegistreFoncier.Resources.Consultation.Index.Procuration<li />
-                    <li>@RegistreFoncier.Resources.Consultation.Index.Mandat<li />
-                    <li>@RegistreFoncier.Resources.Consultation.Index.Curateur<li />
-                    <li>@RegistreFoncier.Resources.Consultation.Index.Heritier<li />
-                    <li>@RegistreFoncier.Resources.Consultation.Index.Autre<li />
-                </ul>
+            <p>
+                @RegistreFoncier.Resources.Consultation.Index.Option1
+            <ul style="list-style-position: inside">
+                <li>@RegistreFoncier.Resources.Consultation.Index.Proprietaire
+                <li>@RegistreFoncier.Resources.Consultation.Index.Procuration
+                <li>@RegistreFoncier.Resources.Consultation.Index.Mandat
+                <li>@RegistreFoncier.Resources.Consultation.Index.Curateur
+                <li>@RegistreFoncier.Resources.Consultation.Index.Heritier
+                <li>@RegistreFoncier.Resources.Consultation.Index.Autre
+            </ul>
+        </p>
+        <div class="form-group">
+            <h3><a>@Html.ActionLink("> Propriétaire ou en possession d'une procuration", "Complet", "Consultation")</a></h3>
+        </div>
+        <p>@RegistreFoncier.Resources.Consultation.Index.Option2</p>
+        <div class="form-group">
+            <h3><a>@Html.ActionLink("> Demande d'un extrait public", "Public", "Consultation")</a></h3>
+        </div>
+        </p>
+        </br>
+        <div class="form-group">
+            <h6>@RegistreFoncier.Resources.Consultation.Index.Guichet</h6>
+        </div>
+        </br>
+        <div>
+            <p class="alert-warning" style="font-size:medium">
+                @RegistreFoncier.Resources.Consultation.Index.Disclaimer1</br>
+                </br>
+                @RegistreFoncier.Resources.Consultation.Index.Disclaimer2
             </p>
-            <div class="form-group">
-                <h3><a>@Html.ActionLink("> Propriétaire ou en possession d'une procuration", "Index2", "Consultation")</a></h3>
-            </div>
-            <p>@RegistreFoncier.Resources.Consultation.Index.Option2</p>
-            <div class="form-group">
-                <h3><a>@Html.ActionLink("> Demande d'un extrait public", "Public", "Consultation")</a></h3>
-            </div>
+        </div>
         </form>
         <!-- END CONTACT FORM -->
     </div>

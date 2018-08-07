@@ -70,6 +70,24 @@ namespace RegistreFoncier.Resources.Consultation {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Conformément aux articles 970 alinéa 2 du Code civil et 26 de l&apos;Ordonnance sur le registre foncier (ORF), vous pouvez obtenir un extrait du registre foncier de certaines données du registre foncier d&apos;un immeuble déterminé sans devoir justifier d&apos;un intérêt..
+        /// </summary>
+        public static string Disclaimer1 {
+            get {
+                return ResourceManager.GetString("Disclaimer1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le système est protégé contre la consultation en série, une telle consultation nécessitant la justification d&apos;un intérêt..
+        /// </summary>
+        public static string Disclaimer2 {
+            get {
+                return ResourceManager.GetString("Disclaimer2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à E-mail : .
         /// </summary>
         public static string Email {

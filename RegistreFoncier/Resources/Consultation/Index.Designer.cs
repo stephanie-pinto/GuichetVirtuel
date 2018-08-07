@@ -79,6 +79,33 @@ namespace RegistreFoncier.Resources.Consultation {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à A l&apos;exception de certaines informations qui sont publiques pour un immeuble déterminé, les données du registre foncier ne sont accessibles que moyennant la justification d&apos;un intérêt..
+        /// </summary>
+        public static string Disclaimer1 {
+            get {
+                return ResourceManager.GetString("Disclaimer1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Les demandes en ligne d&apos;extrait public du registre foncier sont gratuites, les autres prestations donnent lieu à la perception d&apos;un émolument..
+        /// </summary>
+        public static string Disclaimer2 {
+            get {
+                return ResourceManager.GetString("Disclaimer2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vous avez également la possibilité de faire vos demandes directement au guichet physique des registres fonciers. Attention, s&apos;il s&apos;agit d&apos;une demande d&apos;extrait complet du registre foncier, vous devez apporter avec vous une pièce d&apos;identité et tout document qui justifie votre intérêt. .
+        /// </summary>
+        public static string Guichet {
+            get {
+                return ResourceManager.GetString("Guichet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Vous êtes héritier du propriétaire,.
         /// </summary>
         public static string Heritier {

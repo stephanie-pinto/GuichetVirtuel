@@ -70,7 +70,7 @@ namespace RegistreFoncier.Resources.Consultation {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Dcouments annexés (procuration , certificat d&apos;héritage, etc.) :.
+        ///   Recherche une chaîne localisée semblable à Annexer tous documents utiles à la justification de votre intérêt (procuration , certificat d&apos;héritage, etc.) :.
         /// </summary>
         public static string Annexe {
             get {
@@ -84,6 +84,24 @@ namespace RegistreFoncier.Resources.Consultation {
         public static string Commune {
             get {
                 return ResourceManager.GetString("Commune", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Conformément à l&apos;article 970 alinéa 1 du Code civil, vous devez justifier d&apos;un intérêt pour obtenir un extrait certifié ou une attestation concernant d&apos;autres données que celles librement accessibles..
+        /// </summary>
+        public static string Disclaimer1 {
+            get {
+                return ResourceManager.GetString("Disclaimer1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à La commande est livrée et facturée à l&apos;adresse indiquée dans le formulaire..
+        /// </summary>
+        public static string Disclaimer2 {
+            get {
+                return ResourceManager.GetString("Disclaimer2", resourceCulture);
             }
         }
         

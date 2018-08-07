@@ -16,15 +16,12 @@ namespace DAL
             
         public static ExtraitPublic GetExtraitPublic(int IdPublic, String Name, String Firstname, String Email, String Commune, String Parcelle)
         {
-
+            //Connection à la DB
             //ExtraitPublic extraitPublic = ConfigurationManager.ConnextionStrings["DatabaseDataAccess"].ConnectionString;
 
 
-            //return extraitPublic;
-
             //SEND MAIL
             try
-
             {
 
                 MailMessage mailMessage = new MailMessage();
@@ -77,7 +74,6 @@ namespace DAL
             }
 
             catch (Exception)
-
             {
 
             }

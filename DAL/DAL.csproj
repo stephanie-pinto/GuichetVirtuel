@@ -82,6 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExtraitCompletDB.cs" />
+    <Compile Include="ContactDB.cs" />
+    <Compile Include="IntercapiDB.cs" />
     <Compile Include="ExtraitPublicDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

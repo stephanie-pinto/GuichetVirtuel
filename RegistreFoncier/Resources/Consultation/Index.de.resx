@@ -123,6 +123,15 @@
   <data name="Curateur" xml:space="preserve">
     <value>Sie sind der Kurator des Eigentümers,</value>
   </data>
+  <data name="Disclaimer1" xml:space="preserve">
+    <value>Mit Ausnahme bestimmter Informationen, die für ein bestimmtes Gebäude öffentlich zugänglich sind, sind die Grundbuchdaten nur mit der Begründung eines Interesses zugänglich.</value>
+  </data>
+  <data name="Disclaimer2" xml:space="preserve">
+    <value>Online-Anträge auf öffentlichen Auszug aus dem Grundbuch sind kostenlos, andere Leistungen führen zum Erhalt einer Gebühr.</value>
+  </data>
+  <data name="Guichet" xml:space="preserve">
+    <value>Sie können sich auch direkt an das physische Grundbuchamt wenden. Achtung, wenn es sich um einen vollständigen Auszug des Grundbuchs handelt, müssen Sie einen Ausweis und ein Dokument mitbringen, das Ihr Interesse rechtfertigt.</value>
+  </data>
   <data name="Heritier" xml:space="preserve">
     <value>Du bist Erbe des Besitzers,</value>
   </data>

@@ -1,7 +1,5 @@
 ﻿@model RegistreFoncier.ViewModels.PublicViewModels
-{
-    @ViewBag.Title = "Contact";
-}
+
 <!-- Carousel
     ================================================== -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -13,9 +11,9 @@
     </ol>
     <div class="carousel-inner">
         <div class="item active">
-            <img src="http://placehold.it/900x500/777777&text=First+slide" alt="First slide">
+            <img src="~/Src/bookshelf.jpg" alt="Public"/>
             <div class="container">
-                <div class="carousel-caption">
+                <div class="carousel-caption"   style="text-shadow:2px 2px 2px black">
                     <h1>@RegistreFoncier.Resources.Consultation.Public.Titre1</h1>
                     <h2>
                         @RegistreFoncier.Resources.Consultation.Public.Titre2
@@ -42,6 +40,8 @@
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @Html.Raw(TempData["msg"])
 
         <div class="form-group">
             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -85,12 +85,24 @@
         <!--Enregistrement de la demande-->
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value=@RegistreFoncier.Resources.Consultation.Public.Envoyer class="btn btn-lg btn-primary"/>
+                <input type="submit" value=@RegistreFoncier.Resources.Consultation.Public.Envoyer class="btn btn-lg btn-primary" />
             </div>
         </div>
+        <p> </p>
+        <div>
+            <p class="alert-warning" style="font-size:medium">
+                @RegistreFoncier.Resources.Consultation.Public.Disclaimer1
+            </p>
+            <p class="alert-warning" style="font-size:medium">
+                @RegistreFoncier.Resources.Consultation.Public.Disclaimer2
+            </p>
+        </div>
         @ViewBag.Message
+
     </div>
+
             }
+
 
 
             <!-- FOOTER -->

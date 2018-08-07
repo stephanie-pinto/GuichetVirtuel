@@ -120,6 +120,12 @@
   <data name="Commune" xml:space="preserve">
     <value>Commune :</value>
   </data>
+  <data name="Disclaimer1" xml:space="preserve">
+    <value>Conformément aux articles 970 alinéa 2 du Code civil et 26 de l'Ordonnance sur le registre foncier (ORF), vous pouvez obtenir un extrait du registre foncier de certaines données du registre foncier d'un immeuble déterminé sans devoir justifier d'un intérêt.</value>
+  </data>
+  <data name="Disclaimer2" xml:space="preserve">
+    <value>Le système est protégé contre la consultation en série, une telle consultation nécessitant la justification d'un intérêt.</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>E-mail : </value>
   </data>

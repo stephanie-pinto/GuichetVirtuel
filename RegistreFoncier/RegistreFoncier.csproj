@@ -167,7 +167,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Context\ApplicationDataContext.cs" />
-    <Compile Include="Controllers\AdressIPcs.cs" />
     <Compile Include="Controllers\ConsultationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -178,6 +177,16 @@
     <Compile Include="Models\UserModels.cs" />
     <Compile Include="MyController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Consultation\DemandeIntercapi.Designer.cs">
+      <DependentUpon>DemandeIntercapi.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Consultation\DemandeIntercapi.de.Designer.cs">
+      <DependentUpon>DemandeIntercapi.de.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Resources\Consultation\Public.de.Designer.cs">
       <DependentUpon>Public.de.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -218,16 +227,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Resources\Consultation\Index2.de.Designer.cs">
-      <DependentUpon>Index2.de.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Resources\Consultation\Index2.Designer.cs">
-      <DependentUpon>Index2.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Resources\Consultation\Index.de.Designer.cs">
       <DependentUpon>Index.de.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -260,6 +259,7 @@
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CompletViewModels.cs" />
+    <Compile Include="ViewModels\IntercapiViewModels.cs" />
     <Compile Include="ViewModels\PublicViewModels.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
   </ItemGroup>
@@ -288,7 +288,17 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Src\Batiment_Sion.jpg" />
+    <Content Include="Src\bookshelf.jpg" />
+    <Content Include="Src\computer-capi.png" />
+    <Content Include="Src\faq.jpg" />
+    <Content Include="Src\hiking.jpg" />
+    <Content Include="Src\laptop1.jpg" />
+    <Content Include="Src\Sans.png" />
+    <Content Include="Src\testament.jpg" />
+    <Content Include="Src\val-de-mesdi.jpg" />
     <Content Include="Src\valais.png" />
+    <Content Include="Src\computer.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -329,21 +339,21 @@
     <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\RF.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Home\FAQ.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Consultation\Public.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App_Data\Data\XMLSchema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <Content Include="Views\Consultation\Done.cshtml" />
     <Content Include="Views\Consultation\Intercapi.cshtml" />
-    <Content Include="Views\Consultation\Index2.cshtml" />
     <Content Include="Views\Consultation\Complet.cshtml" />
     <Content Include="Views\Consultation\Index.cshtml" />
+    <Content Include="Views\Consultation\DemandeIntercapi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
@@ -356,10 +366,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\Data\" />
     <Folder Include="App_Data\Upload\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Consultation\DemandeIntercapi.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DemandeIntercapi.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Consultation\DemandeIntercapi.de.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DemandeIntercapi.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Consultation\Public.de.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Public.de.Designer.cs</LastGenOutput>
@@ -391,14 +408,6 @@
     <EmbeddedResource Include="Resources\Consultation\Done.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Done.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Consultation\Index2.de.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Index2.de.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Consultation\Index2.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Index2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Consultation\Index.de.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

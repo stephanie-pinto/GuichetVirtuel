@@ -120,6 +120,9 @@
   <data name="Demande" xml:space="preserve">
     <value>Demande d'abonnement?</value>
   </data>
+  <data name="DemandeIntercapi" xml:space="preserve">
+    <value>Faire une demande Intercapi</value>
+  </data>
   <data name="MDP" xml:space="preserve">
     <value>Mot de passe oublié ?</value>
   </data>
